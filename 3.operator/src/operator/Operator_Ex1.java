@@ -32,7 +32,6 @@ public class Operator_Ex1 {
 		System.out.println(intd-inte);
 		System.out.println(((intd-inte)/10) + ((intd-inte)%10)*0.1);
 		
-		System.out.println("git test");
 
 	}
 
