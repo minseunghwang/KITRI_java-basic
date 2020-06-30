@@ -1,5 +1,9 @@
 package pa;
 
-public class A {
+import pb.B;
 
+public class A {
+	void methodA() {
+		B b = new B();
+	}
 }
