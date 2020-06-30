@@ -14,5 +14,4 @@ public class StudentExample {
 //		student.run("yeo");
 
 	}
-
 }

@@ -12,7 +12,5 @@ public class MemberServiceExample {
 		else {
 			System.out.println("id또는 password가 일치하지 않습니다.");
 		}
-
 	}
-
 }

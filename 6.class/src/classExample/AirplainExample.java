@@ -6,7 +6,6 @@ public class AirplainExample {
 		System.out.println(f35.model);
 		f35.naming("F35AA");
 		System.out.println(f35.model);
-
 	}
 }
 

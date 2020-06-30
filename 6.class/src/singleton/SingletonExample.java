@@ -15,5 +15,6 @@ public class SingletonExample {
 	}
 }
 
+
 class Example {}
 

@@ -29,5 +29,4 @@ public class Calculator {
 	int div(int x, int y) {
 		return x / y;
 	}
-
 }

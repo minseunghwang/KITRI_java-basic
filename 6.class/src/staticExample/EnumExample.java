@@ -8,6 +8,5 @@ public class EnumExample {
 		if(week == Week.SUNDAY) {
 			System.out.println(week);
 		}
-
 	}
 }

@@ -36,7 +36,6 @@ class Car{
 		this.color = color;
 	}
 	
-	
 	// 필드 값
 	String company = "현대";
 	String model = "제네시스";
