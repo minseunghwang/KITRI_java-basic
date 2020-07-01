@@ -2,7 +2,9 @@ package fourth;
 
 public class StudentExample {
 	public static void main(String args[]) {
+		
 		Student s = new Student();
+		
 		s.name = "홍길동";
 		s.ban = 1;
 		s.no = 1;
@@ -12,6 +14,11 @@ public class StudentExample {
 		System.out.println("이름:" + s.name);
 		System.out.println("총점:" + s.getTotal());
 		System.out.println("평균:" + s.getAverage());
+		
+//		System.out.println(Math.round(33.373 * 10) / 10.0); //소숫점 둘째자리 까지 표시
+//		System.out.println(Math.round((float)s.total/3*10));
+//		System.out.println((float)s.total/3*10);
+
 	}
 }
 
@@ -30,7 +37,9 @@ class Student{
 	}
 	
 	float getAverage() {
-		float avg = (float)total/3.2f;
+		float avg = (float) (Math.round((float)total/3*10) / 10.0);
 		return avg;
 	}
+
+
 }
