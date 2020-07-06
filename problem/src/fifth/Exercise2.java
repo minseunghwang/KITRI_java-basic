@@ -1,10 +1,10 @@
 package fifth;
 
 class MyTv2 {
-	boolean isPowerOn;
-	int channel;
-	int volume;
-	int f_channel;
+	private boolean isPowerOn;
+	private int channel;
+	private int volume;
+	private int f_channel;
 	final int MAX_VOLUME = 100;
 	final int MIN_VOLUME = 0;
 	final int MAX_CHANNEL = 100;
@@ -16,21 +16,29 @@ class MyTv2 {
 		f_channel = tmp;
 	}
 
+	public boolean isPowerOn() {
+		return isPowerOn;
+	}
+
+	public void setPowerOn(boolean isPowerOn) {
+		this.isPowerOn = isPowerOn;
+	}
+
 	public int getChannel() {
 		return channel;
 	}
+
 	public void setChannel(int channel) {
-		f_channel = this.channel;
 		this.channel = channel;
 	}
+
 	public int getVolume() {
 		return volume;
 	}
+
 	public void setVolume(int volume) {
 		this.volume = volume;
 	}
-	
-
 }
 
 class Exercise2 {
