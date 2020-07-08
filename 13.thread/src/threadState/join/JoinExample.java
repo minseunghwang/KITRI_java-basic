@@ -16,7 +16,7 @@ public class JoinExample {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		System.out.println("1~100합은 : " + sumthread.getSum());
 	}
 }
