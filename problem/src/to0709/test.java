@@ -1,5 +1,7 @@
 package to0709;
 
+import java.util.Objects;
+
 public class test {
 
 	public static void main(String[] args) {
@@ -56,6 +58,23 @@ public class test {
 		long v7 = Math.round(5.3);
 		System.out.println(v7);
 		
+		Short obj = new Short((short) 100);
+//		Integer obj = new Integer(100);
+		System.out.println(obj);
+		
+		String ms = "홍길동&이수종,박연수, 김자바-최명호, ()낙지사";
+		String[] mss = ms.split("-");
+		System.out.println(mss[0]);
+		System.out.println(mss[1]);
+		
+		StringBuilder sb = new StringBuilder();
+		sb.append("abcd");
+		System.out.println(sb);
+		sb.append("efgh");
+		System.out.println(sb);
+		sb.delete(4, 7);
+		System.out.println(sb);
+		System.out.println(sb.length());
 	}
 
 }
