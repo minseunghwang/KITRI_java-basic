@@ -1,4 +1,4 @@
-package to0714_12;
+package etc;
 
 import java.util.HashSet;
 import java.util.Set;
