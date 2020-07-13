@@ -1,4 +1,4 @@
-package to0714_12;
+package etc;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -44,7 +44,6 @@ public class Exercise5 {
 		set.add(c1);
 		set.add(c2);
 		set.add(c3);
-		
 		System.out.println(set);
 	}
 }
