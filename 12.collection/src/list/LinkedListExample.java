@@ -1,4 +1,4 @@
-package list;
+hashcodepackage list;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
