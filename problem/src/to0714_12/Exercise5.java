@@ -28,6 +28,11 @@ class SutdaCard {
 	public String toString() {
 		return num + (isKwang ? "K" : "");
 	}
+	
+	@Override
+	public int hashCode() {
+		return ;
+	}
 }
 
 public class Exercise5 {
@@ -39,6 +44,7 @@ public class Exercise5 {
 		set.add(c1);
 		set.add(c2);
 		set.add(c3);
+		
 		System.out.println(set);
 	}
 }
