@@ -46,19 +46,18 @@ class Student implements Comparable {
 
 public class Exercise3 {
 	static int getGroupCount(TreeSet tset, int from, int to) {
-		System.out.println("from : " + from + " , " + "to : " + to);
-		System.out.println(tset);
-		
+		int cnt = 0;
 		for(Object i:tset) {
 			Student si = (Student)i;
-			System.out.println(si.getAverage());
+			if(from <= si.getAverage() && si.getAverage() < to) {
+				cnt++;
+			}
 		}
 		NavigableSet rangeSet = (NavigableSet) tset.subSet(from, to);
-		return rangeSet.size();
+		return cnt;
 	}
 
 	public static void main(String[] args) {
-
 		TreeSet set = new TreeSet(new Comparator() {
 			public int compare(Object o1, Object o2) {
 				if (o1 instanceof Student && o2 instanceof Student) {

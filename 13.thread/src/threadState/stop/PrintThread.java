@@ -6,7 +6,7 @@ public class PrintThread extends Thread {
 		try {
 			while (true) {
 				System.out.println("PrintThread 동작중");
-//				Thread.sleep(1);
+				Thread.sleep(1);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

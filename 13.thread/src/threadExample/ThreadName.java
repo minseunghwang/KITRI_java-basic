@@ -19,8 +19,6 @@ class ThreadA extends Thread{
 	ThreadA(String name){
 		super(name);
 	}
-	
-	
 	@Override
 	public void run() {
 		System.out.println("ThreadA 실행");
