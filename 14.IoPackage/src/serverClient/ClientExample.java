@@ -10,9 +10,15 @@ import java.util.Scanner;
 
 public class ClientExample {
 
+	static Socket socket;
+	static InputStream is;
+	static DataInputStream dis;
+
+	static OutputStream os;
+	static DataOutputStream dos;
+
 	public static void main(String[] args) {
 
-		Socket socket = null;
 		Scanner sc = new Scanner(System.in);
 
 		try {
@@ -20,40 +26,59 @@ public class ClientExample {
 			System.out.println("요청");
 			socket.connect(new InetSocketAddress("192.168.0.25", 5001));
 			System.out.println("연결성공");
-			
-			
-			InputStream is = socket.getInputStream();
-			DataInputStream dis = new DataInputStream(is);
-			
-			OutputStream os = socket.getOutputStream();
-			DataOutputStream dos = new DataOutputStream(os);
-			
-			System.out.println("사용자 ID를 입력하세요 : ");
+
+			is = socket.getInputStream();
+			dis = new DataInputStream(is);
+
+			os = socket.getOutputStream();
+			dos = new DataOutputStream(os);
+
+			System.out.print("사용자 ID를 입력하세요 : ");
 			String id = sc.nextLine();
 			dos.writeUTF(id);
 			
-			while (true) {
-				System.out.println("전송할 메세지 입력 : ");
-				String msg = sc.nextLine();
-				dos.writeUTF(msg);
-				os.flush(); // buffer 청소!
-				
-				String readMsg = dis.readUTF(); // 내가 보낸 메시지 출력
-				System.out.println("받은 메세지 : " + readMsg);
-				
-				if(msg.equals("EXIT")) {
-					break;
+			Runnable Rrunnable = () ->{
+				try {
+					while(true) {
+						String result = dis.readUTF();
+						System.out.println(result);
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
 				}
-			}
-			dos.close();
-			os.close();
-			dis.close();
-			is.close();
+			};
+			
+			Runnable Srunnable = () ->{
+				try {
+					while (true) {
+						String msg = sc.nextLine();
+						dos.writeUTF(msg);
+						os.flush(); // buffer 청소!
+
+						if (msg.equals("EXIT")) {
+							System.out.println("대화방 나감");
+							break;
+						}
+					}
+				} catch (Exception e2) {
+					e2.printStackTrace();
+				} 
+			};
+			
+			Thread Sthread = new Thread(Srunnable);
+			Thread Rthread = new Thread(Rrunnable);
+			Sthread.start();
+			Rthread.start();
+			
 		} catch (Exception e) {
 
 		} finally {
 			try {
-				socket.close();
+//				dos.close();
+//				os.close();
+//				dis.close();
+//				is.close();
+//				socket.close();
 			} catch (Exception e2) {
 			}
 		}

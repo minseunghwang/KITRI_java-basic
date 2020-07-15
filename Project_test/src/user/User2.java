@@ -15,12 +15,12 @@ public class User2 {
 	private String u_talent;
 	private String u_mbti;
 	private int u_like;
-	private Blob u_img;
+	private String u_img;
 	
-	public Blob getU_img() {
+	public String getU_img() {
 		return u_img;
 	}
-	public void setU_img(Blob u_img) {
+	public void setU_img(String u_img) {
 		this.u_img = u_img;
 	}
 	public int getU_no() {
